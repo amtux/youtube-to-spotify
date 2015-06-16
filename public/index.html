@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="youtubeToSpotify">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Youtube to Spotify</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script><!-- load angular -->
+
+	<script src="js/main.js"></script> <!-- load up angular app file -->
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>Youtube To Spotify Service</h1>
+		</div>
+	</div>
+<!-- 	<div id="link-box" class="row">
+		<div class="col-sm-4 col-sm-offset-4">
+			
+		</div>
+	</div> -->
+	<div id="todo-form" class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<form method="POST" action="/" class="text-center" ng-controller="FormController as formCtrl">
+				<div class="form-group">
+					<input type="text" name="videoLink" class="form-control input-lg text-center" placeholder="Enter Youtube video URL here.." ng-model="formCtrl.videoUrl.val">
+				</div>
+				<!-- <span>{{formCtrl.videoUrl.val}}</span> -->
+				<button type="submit" class="btn btn-primary btn-lg">Submit!</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
+
