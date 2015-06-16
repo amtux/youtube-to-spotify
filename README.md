@@ -17,3 +17,7 @@ module.exports = {
 npm install
 npm start
 ``` 
+
+## Contributors
+* Aman(amtux) - node app, front-end, service connections
+* Puneet(puneetgill05) - Media download & conversion services, back-end
