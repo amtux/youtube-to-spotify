@@ -9,7 +9,7 @@ A service that allows you to add audio from your favorite Youtube videos to your
 ```
 module.exports = { 
 	clientId: "your-client-id-here",
-	clientSecret: "your-secred-secret-here" 
+	clientSecret: "your-client-secret-here" 
 };
 ```
 * With nodejs and npm installed, install required node modules and start the app
