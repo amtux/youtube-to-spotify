@@ -61,6 +61,8 @@ exports.callbackAuth = function(req, res) {
       		json: true
    		};
 
+   		var result = null;
+
    		request.post(authOptions, function(error, response, body) {
 	      	if (!error && response.statusCode === 200) {
 	      		var access_token = body.access_token;
@@ -76,11 +78,10 @@ exports.callbackAuth = function(req, res) {
 	        	request.get(options, function(error, response, body) {
 	          		console.log(body);
 	        	});
-	      		// var result = querystring.stringify({
-	      		// 		access_token: access_token,
-	      		// 		refresh_token: refresh_token
-	      		// 	});
-	      		// exports.authToken = access_token;
+	      		result = '/#' + querystring.stringify({
+	      				access_token: access_token,
+	      				refresh_token: refresh_token
+	      			});
 
 	        	// we can also pass var result = e token to the browser to make requests from there
 	        	// res.redirect('/#' +
@@ -89,11 +90,15 @@ exports.callbackAuth = function(req, res) {
           //   		refresh_tokens: refresh_token
          	//  	}));
 	      	} else {
-	      		res.redirect('/#' +
-	        		querystring.stringify({
+	      		result = querystring.stringify({
 	            	error: 'invalid_token'
-	          	}));
+	          	})
+	      		// res.redirect('/#' +
+	        // 		querystring.stringify({
+	        //     	error: 'invalid_token'
+	        //   	}));
 	      	}
+	      	res.redirect(result);
     	});
   	}
 	// console.log(req.query.state);

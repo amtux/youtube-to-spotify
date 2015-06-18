@@ -17,8 +17,9 @@ module.exports = function(app) {
 
 	app.get('/callback', function(req, res) {
 		var files = spotifyServ.callbackAuth(req, res);
+		
 		// console.log(spotifyServ.authToken);
-		res.end();
+		// res.end();
 	});
 
 	app.get('/', function(req, res) {
